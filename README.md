@@ -9,6 +9,7 @@ In `init.gml`:
 get_btt_data = false;
 ```
 having `get_btt_data` as an existing variable is how the stage knows when to read a character's custom course.
+
 In `update.gml` **at the end of the script**:
 ```
 #define room_add(_room_id,room_data) //Adds a new room to the scene
