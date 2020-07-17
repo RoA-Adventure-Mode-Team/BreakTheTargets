@@ -128,7 +128,7 @@ In this version of the AM API, there are a few different article types, ordered 
 9. Checkpoint (9)
 10. Target (10)
 
-The most important 3 you need to know are Terrain, Trigger Zones, and Targets. The others are perfectly functioning, but will go over them in the advanced section. 
+The most important 3 you need to know are Terrain, Trigger Zones, and Targets. The others are perfectly functioning, but will go over them in the advanced section. (aka when AM is done.)
 
 #### Terrain (1)
 The terrain article has the following argument format:
