@@ -34,6 +34,7 @@ The RoA AM API is built to handle infinitely large worlds. It does so by breakin
 Here's R-00's custom course code, put in `update.gml`:
 ```
 if get_btt_data { //Get data for Break The Targets
+	course_name = "R-00 Course";
 	//Set the spawn properties
 	respawn_point = [[29,50],[0,0],1];
 	//Set the collision of the solid sprites to precise
@@ -49,7 +50,11 @@ if get_btt_data { //Get data for Break The Targets
 		        [10, 52, 44, 0, -5, [3, 0, 0, 0, 0, 0, 0, 0], [0]],
 		        [10, 55, 75, 0, -5, [3, 0, 0, 0, 0, 0, 0, 0], [0]],
 		        [10, 125, 55, 0, -5, [4, 0, 32, [[0,0],[0,-1]], 0, 0, 0, 0], [0]],
-		    	[1, 2, 2, 2, 0, [sprite_get("btt_solid"), 0, 0, 0, 0, 0, 0, 0], [0]]
+		        //Solid Ground
+		    	[1, 2, 2, 2, 0, [sprite_get("btt_solid"), 0, 0, 0, 0, 0, 0, 0], [0]],
+		    	//Plats
+		    	[1, 46, 49, 1, 0, [sprite_get("btt_plat_64"), 0, 0, 0, 0, 0, 0, 0], [0]],
+		    	[1, 64, 71, 1, 0, [sprite_get("btt_plat_64"), 0, 0, 0, 0, 0, 0, 0], [0]]
 	            ]
 	        ],
 	    //Blastzones
@@ -73,6 +78,7 @@ if get_btt_data { //Get data for Break The Targets
 	        ]
 	    ]);
 }
+
 ```
 I highly recommend you follow this format as close as possible, as it is a crazy nested array with a lot of moving parts. Let's break it down further.
 
@@ -80,12 +86,14 @@ I highly recommend you follow this format as close as possible, as it is a crazy
 ### Spawn and Solid Collision Properties
 ```
 ...
+course_name = "R-00 Course";
 //Set the spawn properties
 respawn_point = [[29,50],[0,0],1];
 //Set the collision of the solid sprites to precise
 sprite_change_collision_mask("btt_solid",true, 0, 0, 0, 0, 0, 0 );  
 ...
 ```
+`course_name` is the name that is displayed at the bottom left corner.
 The spawn location is of the format:
 `respawn_point = [[tile_x,tile_y],[cell_x,cell_y],room_id];`
 This is the starting spot the player will spawn at.
@@ -178,6 +186,8 @@ It should have all of your static, solid collisions you plan on having in a cell
 *NOTE: MOST cases should only need 1 cell, and 1 sprite.*
 
 These are the sprites that will be specially designated with `sprite_change_collision_mask` and should be placed at 2,2 in their respective cell.
+
+In the BtT folder there's a basic 16 tileset of the training mode stage.
 
 ### 2: Place Articles
 We unfortunately do not have an automatic way to pull locations reliably 1-to-1. You can use your solid collision sprites to get a rough idea of where you should place your targets (tiles are pixels/16, and remove 2 tiles due to offsets), then use the in-game console and debug mode to fine-tune the locations of the articles. The red circle is the camera position, and is detailed in the upper left corner of the debug info.
