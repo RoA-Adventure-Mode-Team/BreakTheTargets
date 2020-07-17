@@ -98,7 +98,7 @@ The spawn location is of the format:
 `respawn_point = [[tile_x,tile_y],[cell_x,cell_y],room_id];`
 This is the starting spot the player will spawn at.
 
-The second bit changes the collision mask of the solid article sheet to be continuous - meaning it only applies collision to pixels that are not transparent. It allows us to consolidate all solid articles into 1, saving a lot of resources. Keep it as the above formatting, just changing the first string to be your course sprite's name.
+The third bit changes the collision mask of the solid article sheet to be continuous - meaning it only applies collision to pixels that are not transparent. It allows us to consolidate all solid articles into 1, saving a lot of resources. Keep it as the above formatting, just changing the first string to be your course sprite's name.
 
 ### Spawning Articles
 `room_add` has the following format:
