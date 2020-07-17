@@ -2,7 +2,8 @@
 Here's a comprehensive guide to making your own break the target stages for the Break the Targets minigame on the RoA Workshop. It uses an early version of the RoA Adventure Mode API, meaning it has a lot of support for features beyond the minigame. But, we will only discuss things which are relevant to making a custom Break the Targets course. I will write a guide to the API once it and the example level is finished. In the meantime, have fun with this stripped down version for this minigame.
 
 ## Required Code
-Here's the required snippets of code before you custom code anything:
+Here's the required snippets of code before you custom code anything.
+
 In `init.gml`:
 ```
 get_btt_data = false;
