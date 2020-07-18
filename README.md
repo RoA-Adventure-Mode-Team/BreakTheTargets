@@ -142,28 +142,47 @@ The most important 3 you need to know are Terrain, Trigger Zones, and Targets. T
 
 #### Terrain (1)
 The terrain article has the following argument format:
+
 `[1, x, y, article_type, depth, [sprite_index, animation_speed, 0, 0, 0, 0, 0, 0], [spawn_flag]];`
+
 Note: `article_type` here should be 1 (platform) or 2 (solid) to enable collision.
+
 `sprite_index` is the sprite index used for the terrain article. NOTE: sprites should be 1x1 scale and not sized up, as the API does this in game.
+
 `animation_speed` if your article has animation, set the speed here.
 
 #### Trigger Zone (4)
 The Trigger Zone article in BtT is used to make blast zones. It has the following argument format:
+
 `[4, x, y, article_type, depth, [event_id, active_scene, trigger_obj_type, trigger_player, trigger_shape, trigger_w, trigger_h, trigger_negative], [spawn_flag]];`
+
 `event_id` keep as 4. It relates to calling custom event code, and for BtT event 4 is to act as a blast zone.
+
 `active_scene` keep at 0. If not zero, the trigger will only occur on a specific scene. If it's zero, it's active no matter the scene (scenes will not be explained here).
+
 `trigger_obj_type` keep at 0, 0 means it activates from players entering it.
+
 `trigger_player` keep at 0, 0 means it activates no matter the player slot.
+
 `trigger_shape`determines the shape of the trigger. 0 is rectangle, 1 is circle, and 2 uses the sprite_index. (default is 0)
+
 `trigger_w` is the width/radius of the trigger zone (depending on the shape)
+
 `trigger_h` is the height of the trigger zone if a rectangle.
+
 `trigger_negative` keep 0, triggers unless inside. Experimental, might not work.
+
 #### Target (10)
 Targets are destroyed when hit with hitboxes. They have the following argument format:
+
 `[10, x, y, article_type, depth, [targ_id, event_id, move_time, path, 0, 0, 0, 0], `
+
 `targ_id` is the target's id. Used for debugging positions when creating a course.
+
 `event_id` triggers the event_id when destroyed. Keep at event 0, which for BtT is the target destroy event.
+
 `move_time` if the target has a defined path, takes this much time between points.
+
 `path` has the format of: `[[x0,y0],[x1,y1]...]` and defines the path a target will take relative to its starting position and will loop back to the first point once it hits the end of the array.
 
 ### Debug Console
