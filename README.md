@@ -167,7 +167,7 @@ Targets are destroyed when hit with hitboxes. They have the following argument f
 `path` has the format of: `[[x0,y0],[x1,y1]...]` and defines the path a target will take relative to its starting position and will loop back to the first point once it hits the end of the array.
 
 ### Debug Console
-As a final note, since this is the AM API you have access to the debug console by pressing **`** on your keyboard and typing commands with it. Type 'help' for the list of implemented commands. 
+As a final note, since this is the AM API you have access to the debug console by pressing **`** on your keyboard and typing commands with it. Type 'help' for the list of implemented commands. You submit commands with attack since keyboard_string does not detect enter inputs.
 *NOTE: 'debug' is something that is really handy.*
 
 ### Aether Variants
