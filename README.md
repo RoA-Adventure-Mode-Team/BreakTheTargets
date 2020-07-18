@@ -160,7 +160,7 @@ The Trigger Zone article in BtT is used to make blast zones. It has the followin
 `trigger_negative` keep 0, triggers unless inside. Experimental, might not work.
 #### Target (10)
 Targets are destroyed when hit with hitboxes. They have the following argument format:
-`[1, x, y, article_type, depth, [targ_id, event_id, move_time, path, 0, 0, 0, 0], `
+`[10, x, y, article_type, depth, [targ_id, event_id, move_time, path, 0, 0, 0, 0], `
 `targ_id` is the target's id. Used for debugging positions when creating a course.
 `event_id` triggers the event_id when destroyed. Keep at event 0, which for BtT is the target destroy event.
 `move_time` if the target has a defined path, takes this much time between points.
