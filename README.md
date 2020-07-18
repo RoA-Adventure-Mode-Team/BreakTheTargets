@@ -38,7 +38,7 @@ if get_btt_data { //Get data for Break The Targets
 	//Set the spawn properties
 	respawn_point = [[29,50],[0,0],1];
 	//Set the collision of the solid sprites to precise
-	sprite_change_collision_mask("btt_solid",true, 0, 0, 0, 0, 0, 0 );  
+	sprite_change_collision_mask("btt_solid",true, 1, 0, 0, 0, 0, 0 );  
 	room_add(1,[
 	    [ //Each Cell
 	        [0,0], //Cell Coordinates
@@ -90,7 +90,7 @@ course_name = "R-00 Course";
 //Set the spawn properties
 respawn_point = [[29,50],[0,0],1];
 //Set the collision of the solid sprites to precise
-sprite_change_collision_mask("btt_solid",true, 0, 0, 0, 0, 0, 0 );  
+sprite_change_collision_mask("btt_solid",true, 1, 0, 0, 0, 0, 0 );  
 ...
 ```
 `course_name` is the name that is displayed at the bottom left corner.
@@ -98,7 +98,7 @@ The spawn location is of the format:
 `respawn_point = [[tile_x,tile_y],[cell_x,cell_y],room_id];`
 This is the starting spot the player will spawn at.
 
-The third bit changes the collision mask of the solid article sheet to be continuous - meaning it only applies collision to pixels that are not transparent. It allows us to consolidate all solid articles into 1, saving a lot of resources. Keep it as the above formatting, just changing the first string to be your course sprite's name.
+The third bit changes the collision mask of the solid article sheet to be continuous - meaning it only applies collision to pixels that are not transparent. It allows us to consolidate all solid articles into 1, saving a lot of resources. Keep it as the above formatting, just changing the first string to be your course sprite's name. **You need to have the collision calculation type as 1 (the third argument). Automatic collision type does not work properly, but full image type works!**
 
 ### Spawning Articles
 `room_add` has the following format:
