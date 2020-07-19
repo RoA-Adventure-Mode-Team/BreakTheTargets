@@ -143,13 +143,14 @@ The most important 3 you need to know are Terrain, Trigger Zones, and Targets. T
 #### Terrain (1)
 The terrain article has the following argument format:
 
-`[1, x, y, article_type, depth, [sprite_index, animation_speed, 0, 0, 0, 0, 0, 0], [spawn_flag]];`
+`[1, x, y, article_type, depth, [sprite_index, animation_speed, static, 0, 0, 0, 0, 0], [spawn_flag]];`
 
 Note: `article_type` here should be 1 (platform) or 2 (solid) to enable collision.
 
 `sprite_index` is the sprite index used for the terrain article. NOTE: sprites should be 1x1 scale and not sized up, as the API does this in game.
 
 `animation_speed` if your article has animation, set the speed here.
+`static` if you want the article to act as a background. It will not move.
 
 #### Trigger Zone (4)
 The Trigger Zone article in BtT is used to make blast zones. It has the following argument format:
