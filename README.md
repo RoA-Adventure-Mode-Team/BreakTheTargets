@@ -192,7 +192,7 @@ As a final note, since this is the AM API you have access to the debug console b
 
 ### Aether Variants
 Aether variants of the BtT stage put a time cap on the level instead of a ticking up timer. You can set the maximum timer with the following line of code:
-`with obj_stage_article if num == 5  max_timer = XXX`
+`with obj_stage_article if num == 3  max_timer = XXX`
 It defaults to 300 frames.
 
 ## How to Make a Course, Actually.
