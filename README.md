@@ -182,9 +182,9 @@ Targets are destroyed when hit with hitboxes. They have the following argument f
 
 `event_id` triggers the event_id when destroyed. Keep at event 0, which for BtT is the target destroy event.
 
-`move_time` if the target has a defined path, takes this much time between points. You can set it to an array to have different time lengths for different sections of a path.
+`move_vel` if the target has a defined path, this is the velocity to goes on the path. You can set it to an array to have different velocities for different sections of a path.
 
-`path` has the format of: `[[x0,y0],[x1,y1]...]` and defines the path a target will take relative to its starting position and will loop back to the first point once it hits the end of the array.
+`path` has the format of: `[[x0,y0],[x1,y1]...]` and defines the path a target will take between absolute world points.
 
 ### Debug Console
 As a final note, since this is the AM API you have access to the debug console by pressing **`** on your keyboard and typing commands with it. Type 'help' for the list of implemented commands. You submit commands with attack since keyboard_string does not detect enter inputs.
